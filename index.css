@@ -1,0 +1,33 @@
+
+body {
+    position: relative;
+    margin: 0;
+}
+#canvas {
+    background-color: green;
+    display: block;
+}
+.actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid yellow;
+}
+#eraser {
+    margin: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+#clear{
+    margin: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+#pen{
+    margin: 30px;
+    cursor: pointer;
+    padding: 5px;
+}
+.actions .active {
+    background-color: red;
+}
