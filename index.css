@@ -2,32 +2,92 @@
 body {
     position: relative;
     margin: 0;
+
 }
 #canvas {
-    background-color: green;
+    background-color: #ffe8bd;
     display: block;
+    /*position: fixed;*/
+    /*z-index: -1;*/
+    /*top: 0;*/
+    /*left: 0;*/
+}
+#canvas.pencil {
+    cursor: url("./assets/pencil.ico"), auto;
+}
+#canvas.pen {
+    cursor: url("./assets/pen.ico"), auto;
+}
+#canvas.brush {
+    cursor: url("./assets/brush.ico"), auto;
+}
+#canvas.eraser {
+    cursor: url("./assets/eraser.ico"), auto;
 }
 .actions {
     position: absolute;
     top: 0;
-    left: 0;
-    border: 1px solid yellow;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    padding: 10px 0;
+    background-color: rgba(0,0,0,0.1);
 }
-#eraser {
-    margin: 30px;
+.actions .icon {
+    height: 40px;
+    width: 40px;
+    transition: all 0.3s;
+}
+.action {
+    padding: .5em 1em;
+}
+.action.active>.icon {
+    fill: #21c00d;
+    transform: scale(1.3);
+}
+.action>.icon:hover {
     cursor: pointer;
-    padding: 5px;
+    transform: scale(1.3);
 }
-#clear{
-    margin: 30px;
-    cursor: pointer;
-    padding: 5px;
+#palette .color {
+    display: block;
+    height: 20px;
+    width: 50px;
 }
-#pen{
-    margin: 30px;
-    cursor: pointer;
-    padding: 5px;
+input[type="color"]::-webkit-color-swatch-wrapper {
+    border:0;
+    outline:0;
+    padding: 0;
 }
-.actions .active {
-    background-color: red;
+*{
+    margin: 0;
+    padding: 0;
 }
+input{
+    border:0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: 0;
+}
+#save .icon {
+    fill: #3d9afe;
+}
+#clear .icon {
+    fill: #d81e06;
+}
+/*@media (max-width: 768px) {*/
+   /*.actions {*/
+       /*display: flex;*/
+       /*flex-wrap: wrap;*/
+       /*width: 0;*/
+       /*position: absolute;*/
+       /*border: 1px solid red;*/
+       /*left: 0;*/
+   /*}*/
+/*}*/

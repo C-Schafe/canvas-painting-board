@@ -10,11 +10,44 @@
 </head>
 <body>
     <div class="actions">
-        <div id="eraser">橡皮擦</div>
-        <div id="pen">画笔</div>
-        <div id="clear">清空</div>
+        <div id="palette" class="action">
+            <svg class="icon palette2" aria-hidden="true">
+                <use xlink:href="#icon-palette"></use>
+            </svg>
+        </div>
+        <div id="pencil" class="action active">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-pencil"></use>
+            </svg>
+        </div>
+        <div id="pen" class="action">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-pen"></use>
+            </svg>
+        </div>
+        <div id="brush" class="action">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-brush"></use>
+            </svg>
+        </div>
+        <div id="eraser" class="action">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-eraser"></use>
+            </svg>
+        </div>
+        <div id="clear" class="action">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-delete"></use>
+            </svg>
+        </div>
+        <div id="save" class="action">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-download"></use>
+            </svg>
+        </div>
     </div>
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas" class="pencil"></canvas>
     <script src="./index.js"></script>
+    <script src="./svg.js"></script>
 </body>
 </html>
