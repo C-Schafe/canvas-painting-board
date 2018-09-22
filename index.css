@@ -1,16 +1,10 @@
-
 body {
     position: relative;
     margin: 0;
-
 }
 #canvas {
-    background-color: #ffe8bd;
+    background-color: #fff;
     display: block;
-    /*position: fixed;*/
-    /*z-index: -1;*/
-    /*top: 0;*/
-    /*left: 0;*/
 }
 #canvas.pencil {
     cursor: url("./assets/pencil.ico"), auto;
@@ -83,7 +77,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 @media (max-width: 768px) {
    .actions {
-       border: 1px solid red;
+       /*border: 1px solid red;*/
    }
     .actions .icon {
         height: 30px;

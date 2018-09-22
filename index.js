@@ -14,6 +14,7 @@ let lineColor = "black"
 let lineWidth = 3
 let xxx = 3
 let yyy = 30
+let eraserColor = '#fff'
 
 setCanvasSize()
 autoSetCanvasSize()
@@ -65,7 +66,7 @@ function setCanvasSize(){
     let pageHeight = document.documentElement.clientHeight
     canvas.width = pageWidth
     canvas.height = pageHeight
-    ctx.fillStyle="#ffe8bd";
+    ctx.fillStyle= eraserColor;
     ctx.fillRect(0,0,pageWidth,pageHeight);
 }
 function autoSetCanvasSize(){
@@ -134,7 +135,7 @@ function listenToMouse(){
         let y = e.clientY + yyy
         using = true
         if(eraserEnabled){
-            ctx.fillStyle="#ffe8bd";
+            ctx.fillStyle= eraserColor;
             drawCircle(x,y,20,Math.PI*2)
             lastPoint = {x,y}
         }else{
@@ -148,10 +149,10 @@ function listenToMouse(){
         let y = e.clientY + yyy
         if(!using){return}
         if(eraserEnabled){
-            ctx.fillStyle="#ffe8bd";
+            ctx.fillStyle= eraserColor;
             let newPoint = {x,y}
             drawCircle(x,y,20,Math.PI*2)
-            drawLine(lastPoint.x,lastPoint.y,x,y,"#ffe8bd")
+            drawLine(lastPoint.x,lastPoint.y,x,y, eraserColor)
             lastPoint = newPoint
         }else{
             let newPoint = {x,y}
