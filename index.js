@@ -170,8 +170,11 @@ function listenToTouch(){
         let y = e.touches[0].clientY
         using = true
         if(eraserEnabled){
-            ctx.clearRect(x,y,10,10)
+            ctx.fillStyle="#ffe8bd";
+            drawCircle(x,y,20,Math.PI*2)
+            lastPoint = {x,y}
         }else{
+            ctx.fillStyle= lineColor;
             drawCircle(x,y)
             lastPoint = {x,y}
         }
@@ -181,11 +184,15 @@ function listenToTouch(){
         let y = e.touches[0].clientY
         if(!using){return}
         if(eraserEnabled){
-            ctx.clearRect(x,y,10,10)
+            ctx.fillStyle="#ffe8bd";
+            let newPoint = {x,y}
+            drawCircle(x,y,20,Math.PI*2)
+            drawLine(lastPoint.x,lastPoint.y,x,y,"#ffe8bd")
+            lastPoint = newPoint
         }else{
             let newPoint = {x,y}
             drawCircle(x,y)
-            drawLine(lastPoint.x,lastPoint.y,x,y)
+            drawLine(lastPoint.x,lastPoint.y,x,y,lineColor)
             lastPoint = newPoint
         }
     }
@@ -193,4 +200,33 @@ function listenToTouch(){
         using = false
     }
 }
+// function listenToTouch(){
+//     canvas.ontouchstart = (e)=>{
+//         let x = e.touches[0].clientX
+//         let y = e.touches[0].clientY
+//         using = true
+//         if(eraserEnabled){
+//             ctx.clearRect(x,y,10,10)
+//         }else{
+//             drawCircle(x,y)
+//             lastPoint = {x,y}
+//         }
+//     }
+//     canvas.ontouchmove = (e)=>{
+//         let x = e.touches[0].clientX
+//         let y = e.touches[0].clientY
+//         if(!using){return}
+//         if(eraserEnabled){
+//             ctx.clearRect(x,y,10,10)
+//         }else{
+//             let newPoint = {x,y}
+//             drawCircle(x,y)
+//             drawLine(lastPoint.x,lastPoint.y,x,y)
+//             lastPoint = newPoint
+//         }
+//     }
+//     canvas.ontouchend = (e)=>{
+//         using = false
+//     }
+// }
 

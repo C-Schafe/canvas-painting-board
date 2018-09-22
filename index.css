@@ -81,13 +81,16 @@ input[type="color"]::-webkit-color-swatch {
 #clear .icon {
     fill: #d81e06;
 }
-/*@media (max-width: 768px) {*/
-   /*.actions {*/
-       /*display: flex;*/
-       /*flex-wrap: wrap;*/
-       /*width: 0;*/
-       /*position: absolute;*/
-       /*border: 1px solid red;*/
-       /*left: 0;*/
-   /*}*/
-/*}*/
+@media (max-width: 768px) {
+   .actions {
+       border: 1px solid red;
+   }
+    .actions .icon {
+        height: 30px;
+        width: 30px;
+        transition: all 0.3s;
+    }
+    .action {
+        padding: .5em .5em;
+    }
+}
