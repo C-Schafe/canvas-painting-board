@@ -1,3 +1,4 @@
+*{box-sizing: border-box}
 body {
     position: relative;
     margin: 0;
@@ -20,30 +21,50 @@ body {
 }
 .actions {
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     border-top: none;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     display: flex;
-    padding: 10px 0;
-    background-color: rgba(0,0,0,0.1);
+    background-color: #525252;
+    flex-direction: column;
+    margin-left: 10px;
+    overflow: hidden;
 }
 .actions .icon {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
+    padding: 0 10px;
     transition: all 0.3s;
+    fill: #fff;
 }
 .action {
-    padding: .5em 1em;
+    padding: .5em 0;
+    display: flex;
+    align-items: center;
+}
+.action.active {
+    background-color: #323232;
 }
 .action.active>.icon {
-    fill: #21c00d;
+    fill: #ee532c;
+    background-color: #323232;
+
+}
+.action.active>.icon{
+    fill: #ee532c;
     transform: scale(1.3);
+    background-color: transparent;
 }
 .action>.icon:hover {
     cursor: pointer;
+}
+.action>.icon:hover{
     transform: scale(1.3);
+}
+.action>.icon {
+    transition: 0.2s;
 }
 #palette .color {
     display: block;
@@ -70,18 +91,22 @@ input[type="color"]::-webkit-color-swatch {
     border: 0;
 }
 #save .icon {
-    fill: #3d9afe;
+
+}
+#clear {
+    padding-bottom: 0;
 }
 #clear .icon {
-    fill: #d81e06;
+    fill: #f71a2f;
+    padding-bottom: 0;
 }
 @media (max-width: 768px) {
    .actions {
        /*border: 1px solid red;*/
    }
     .actions .icon {
-        height: 30px;
-        width: 30px;
+        height: 50px;
+        width: 50px;
         transition: all 0.3s;
     }
     .action {

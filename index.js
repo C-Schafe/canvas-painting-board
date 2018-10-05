@@ -171,7 +171,7 @@ function listenToTouch(){
         let y = e.touches[0].clientY
         using = true
         if(eraserEnabled){
-            ctx.fillStyle="#ffe8bd";
+            ctx.fillStyle="#fff";
             drawCircle(x,y,20,Math.PI*2)
             lastPoint = {x,y}
         }else{
@@ -185,10 +185,10 @@ function listenToTouch(){
         let y = e.touches[0].clientY
         if(!using){return}
         if(eraserEnabled){
-            ctx.fillStyle="#ffe8bd";
+            ctx.fillStyle="#fff";
             let newPoint = {x,y}
             drawCircle(x,y,20,Math.PI*2)
-            drawLine(lastPoint.x,lastPoint.y,x,y,"#ffe8bd")
+            drawLine(lastPoint.x,lastPoint.y,x,y,"#fff")
             lastPoint = newPoint
         }else{
             let newPoint = {x,y}
